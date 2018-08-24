@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<log>
+  <event seq="346335" time="2018-08-13 23:26:38.532793 +0000" app="BvSshServer 7.39" name="I_CHANNEL_C2S_CLTSIDE_FORWARDING_STARTED" desc="Client-configured client-to-server port forwarding started.">
+    <session id="2379" service="SSH" remoteAddress="27.33.178.97:63143" windowsAccount="EC2AMAZ-S80G73L\benjohnson-proxy"/>
+    <channel type="direct-tcpip" originAddress="127.0.0.1:64667" requestAddress="safebrowsing.googleapis.com:443" targetAddress="safebrowsing.googleapis.com:443"/>
+  </event>
+  <event seq="346336" time="2018-08-13 23:27:17.346362 +0000" app="BvSshServer 7.39" name="I_CONNECT_ACCEPTED" desc="Connection accepted.">
+    <session id="2380" service="SSH" remoteAddress="120.22.5.70:55352"/>
+    <parameters addressRule="AnyIP" listenAddress="172.31.30.122:22345"/>
+  </event>
+
+  <event seq="346337" time="2018-08-13 23:27:17.352121 +0000" app="BvSshServer 7.39" name="I_CONNECT_VERSION_RECEIVED" desc="Client version string received.">
+    <session id="2380" service="SSH" remoteAddress="120.22.5.70:55352"/>
+    <parameters clientVersion="SSH-2.0-7.45 FlowSsh: Bitvise SSH Client (Tunnelier) 7.45 - BvSsh"/>
+  </event>
+
+  <event seq="346338" time="2018-08-13 23:27:47.589873 +0000" app="BvSshServer 7.39" name="I_SESSION_KEY_EXCHANGE_ALGORITHMS" desc="Key exchange algorithms.">
+    <session id="2380" service="SSH" remoteAddress="120.22.5.70:55352"/>
+    <parameters kexAlg="diffie-hellman-group15-sha512" cipherAlgIn="aes256-gcm" cipherAlgOut="aes256-gcm" macAlgIn="" macAlgOut="" comprAlgIn="none" comprAlgOut="none"/>
+  </event>
+
+  <event seq="346341" time="2018-08-13 23:28:14.314309 +0000" app="BvSshServer 7.39" name="I_CHANNEL_C2S_CLTSIDE_FORWARDING_ENDED" desc="Client-configured client-to-server port forwarding ended.">
+    <session id="2379" service="SSH" remoteAddress="27.33.178.97:63143" windowsAccount="EC2AMAZ-S80G73L\benjohnson-proxy"/>
+    <channel type="direct-tcpip" originAddress="127.0.0.1:64602" requestAddress="admin.independentreserve.com:443" targetAddress="admin.independentreserve.com:443"/>
+  </event>
+
+  <event seq="343048" time="2018-08-12 14:17:30.700003 +0000" app="BvSshServer 7.39" name="I_LOGON_AUTH_FAILED" desc="User authentication failed.">
+    <session id="2367" service="SSH" remoteAddress="49.195.67.114:34860"/>
+    <authentication attemptNr="1" userName="adrian-proxy" method="password" windowsAccount="EC2AMAZ-S80G73L\adrian-proxy"/>
+    <parameters failureReason="BadCredentials"/>
+    <help message="Unknown user name or incorrect password."/>
+  </event>
+
+  <event seq="346339" time="2018-08-13 23:27:47.730613 +0000" app="BvSshServer 7.39" name="I_LOGON_AUTH_FAILED" desc="User authentication failed.">
+    <session id="2380" service="SSH" remoteAddress="120.22.5.70:55352"/>
+    <authentication attemptNr="1" userName="Robyn IR" method="password"/>
+    <parameters failureReason="WindowsAccountLookupError"/>
+    <error type="Exception" message="Account lookup failed: [Nt4] First LookupAccountName() for 'Robyn IR' failed with the following error: Windows error 1332: No mapping between account names and security IDs was done."/>
+    <help message="The supplied user name could not be looked up. Only the GSSAPI authentication method can possibly proceed with this username."/>
+  </event>
+
+  <event seq="346674" time="2018-08-14 00:02:40.851029 +0000" app="BvSshServer 7.39" name="I_LOGON_AUTH_FAILED" desc="User authentication failed.">
+    <session id="2388" service="SSH" remoteAddress="49.255.223.147:51867"/>
+    <authentication attemptNr="1" userName="administrator" method="password" windowsAccount="EC2AMAZ-S80G73L\Administrator"/>
+    <parameters failureReason="BadCredentials"/>
+    <help message="Unknown user name or incorrect password."/>
+  </event>
+
+  <event seq="343050" time="2018-08-12 14:17:52.238937 +0000" app="BvSshServer 7.39" name="I_LOGON_AUTH_SUCCEEDED" desc="User authentication succeeded.">
+    <session id="2367" service="SSH" remoteAddress="49.195.67.114:34860" windowsAccount="EC2AMAZ-S80G73L\adrian-proxy"/>
+    <authentication attemptNr="3" userName="adrian-proxy" method="password"/>
+    <parameters groupSettings="(Everyone)" tokenType="LogonUser" tokenLogonType="Network"/>
+  </event>
+</log>
