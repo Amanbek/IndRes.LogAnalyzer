@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("IndRes.LogAnalyzer.Commands")]
+[assembly: AssemblyTitle("IndRes.LogAnalyzer.Plugins")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("EPAM Systems")]
-[assembly: AssemblyProduct("IndRes.LogAnalyzer.Commands")]
+[assembly: AssemblyProduct("IndRes.LogAnalyzer.Plugins")]
 [assembly: AssemblyCopyright("Copyright © EPAM Systems 2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("a7cb615f-e63a-4684-be73-efb58bd08899")]
+[assembly: Guid("9150ca07-4d19-4fc7-bf15-28a17b99c2a7")]
 
 // Version information for an assembly consists of the following four values:
 //
