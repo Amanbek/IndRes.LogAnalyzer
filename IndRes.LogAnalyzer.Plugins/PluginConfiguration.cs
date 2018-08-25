@@ -1,9 +1,7 @@
-﻿using System.Configuration;
-
-namespace IndRes.LogAnalyzer.Plugins
+﻿namespace IndRes.LogAnalyzer.Plugins
 {
-  public class PluginConfiguration
+  public class PluginConfiguration : IPluginConfiguration
   {
-    public string PluginLocation => ConfigurationManager.AppSettings["notification-plugin-location"];
+    public string PluginLocation { get; set; }
   }
 }

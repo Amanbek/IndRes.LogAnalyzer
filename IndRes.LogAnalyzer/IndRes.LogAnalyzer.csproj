@@ -32,6 +32,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Serilog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.2.7.2-dev-01024\lib\net46\Serilog.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Sinks.Console, Version=3.1.2.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Sinks.Console.3.1.2-dev-00777\lib\net45\Serilog.Sinks.Console.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Sinks.File, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Sinks.File.4.0.1-dev-00796\lib\net45\Serilog.Sinks.File.dll</HintPath>
+    </Reference>
     <Reference Include="StructureMap, Version=4.7.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\StructureMap.4.7.0\lib\net45\StructureMap.dll</HintPath>
     </Reference>
@@ -63,6 +72,10 @@
     <ProjectReference Include="..\IndRes.LogAnalyzer.Core\IndRes.LogAnalyzer.Core.csproj">
       <Project>{F8910D71-3CED-4A6B-AAFB-D15805AC9C6D}</Project>
       <Name>IndRes.LogAnalyzer.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IndRes.LogAnalyzer.Plugins\IndRes.LogAnalyzer.Plugins.csproj">
+      <Project>{9150CA07-4D19-4FC7-BF15-28A17B99C2A7}</Project>
+      <Name>IndRes.LogAnalyzer.Plugins</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

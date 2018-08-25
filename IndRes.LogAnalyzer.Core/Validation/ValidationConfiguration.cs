@@ -4,17 +4,10 @@ namespace IndRes.LogAnalyzer.Validation
 {
   public class ValidationConfiguration
   {
-    public int UserNameAttemptsLimit => ValidationConfiguration.TryGetSetting("allowed-username-attempts");
+    public int UserNameAttemptsLimit { get; set; }
 
-    public int SameUsernameAttemptsPeriodLimit => ValidationConfiguration.TryGetSetting("same-username-attempts-period");
+    public int SameUsernameAttemptsPeriodLimit { get; set; }
 
-    public int MultipleUsernameAttemptsPeriodLimit => ValidationConfiguration.TryGetSetting("multiple-username-attempts-period");
-
-    private static int TryGetSetting(string settingName)
-    {
-      return int.TryParse(ConfigurationManager.AppSettings[settingName], out var setting) 
-               ? setting 
-               : int.MaxValue;
-    }
+    public int MultipleUsernameAttemptsPeriodLimit { get; set; }
   }
 }

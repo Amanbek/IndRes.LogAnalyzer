@@ -27,14 +27,30 @@ namespace IndRes.LogAnalyzer.Commands.Commands
       this.pluginProvider = pluginProvider;
     }
 
-    public void Process()
+    public CommandExecuteResult Process()
     {
-      var events = this.logReader.ReadLog();
-      var results = this.validationProvider.Validate(events);
-
-      if (results.Any())
+      try
       {
-        this.NotifyOnViolation(results);
+        var events = this.logReader.ReadLogEvents();
+        var results = this.validationProvider.Validate(events);
+
+        if (results.Any())
+        {
+          this.NotifyOnViolation(results);
+        }
+
+        return new CommandExecuteResult()
+        {
+          Succeeded = true
+        };
+      }
+      catch (Exception e)
+      {
+        return new CommandExecuteResult()
+        {
+          Succeeded = false,
+          Message = e.ToString()
+        };
       }
     }
 

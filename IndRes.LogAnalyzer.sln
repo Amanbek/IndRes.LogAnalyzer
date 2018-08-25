@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IndRes.Samples.SamplePlugin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IndRes.LogAnalyzer.Plugins", "IndRes.LogAnalyzer.Plugins\IndRes.LogAnalyzer.Plugins.csproj", "{9150CA07-4D19-4FC7-BF15-28A17B99C2A7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IndRes.LogAnalyzer.Tests", "IndRes.LogAnalyzer.Tests\IndRes.LogAnalyzer.Tests.csproj", "{BA5A3EF5-F6FE-4599-93DF-3D958B45B5D9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{9150CA07-4D19-4FC7-BF15-28A17B99C2A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9150CA07-4D19-4FC7-BF15-28A17B99C2A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9150CA07-4D19-4FC7-BF15-28A17B99C2A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA5A3EF5-F6FE-4599-93DF-3D958B45B5D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA5A3EF5-F6FE-4599-93DF-3D958B45B5D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA5A3EF5-F6FE-4599-93DF-3D958B45B5D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA5A3EF5-F6FE-4599-93DF-3D958B45B5D9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

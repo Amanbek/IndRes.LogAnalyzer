@@ -7,9 +7,9 @@ namespace IndRes.LogAnalyzer.Plugins
 {
   public class PluginProvider
   {
-    private readonly PluginConfiguration pluginConfiguration;
+    private readonly IPluginConfiguration pluginConfiguration;
 
-    public PluginProvider(PluginConfiguration pluginConfiguration)
+    public PluginProvider(IPluginConfiguration pluginConfiguration)
     {
       this.pluginConfiguration = pluginConfiguration;
     }

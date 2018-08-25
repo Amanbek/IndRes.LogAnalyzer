@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="INotificationPlugin.cs" />
+    <Compile Include="IPluginConfiguration.cs" />
     <Compile Include="NotificationMessage.cs" />
     <Compile Include="PluginConfiguration.cs" />
     <Compile Include="PluginProvider.cs" />

@@ -4,6 +4,6 @@ namespace IndRes.LogAnalyzer.Commands
 {
   public interface ICommand
   {
-    void Process();
+    CommandExecuteResult Process();
   }
 }

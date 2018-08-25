@@ -6,6 +6,6 @@ namespace IndRes.LogAnalyzer.Core
 {
   public interface ILogReader
   {
-    List<Event> ReadLog();
+    List<Event> ReadLogEvents();
   }
 }

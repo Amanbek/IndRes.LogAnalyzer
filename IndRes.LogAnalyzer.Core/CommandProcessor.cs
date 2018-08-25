@@ -4,14 +4,19 @@ using System.Linq;
 using System.Threading.Tasks;
 using IndRes.LogAnalyzer.Commands.Extensions;
 
+using Serilog;
+
 namespace IndRes.LogAnalyzer.Commands
 {
   public class CommandProcessor
   {
-    private Dictionary<ToolCommands, ICommand> _commands = new Dictionary<ToolCommands, ICommand>();
+    private readonly ILogger logger;
 
-    public CommandProcessor(CommandFactory commandFactory)
+    private readonly Dictionary<ToolCommands, ICommand> _commands = new Dictionary<ToolCommands, ICommand>();
+
+    public CommandProcessor(CommandFactory commandFactory, ILogger logger)
     {
+      this.logger = logger;
       _commands.Add(ToolCommands.ReadLog, commandFactory.CreateLogReaderCommand());
       _commands.Add(ToolCommands.AnalyzeLog, commandFactory.CreateAnalyzeLogCommand());
       _commands.Add(ToolCommands.Exit, commandFactory.CreateApplicationExitCommand());
@@ -21,7 +26,12 @@ namespace IndRes.LogAnalyzer.Commands
     {
       if (int.TryParse(input, out var command))
       {
-        _commands.First(c => c.Key == (ToolCommands)command).Value.Process();
+        var result = _commands.First(c => c.Key == (ToolCommands)command).Value.Process();
+
+        if (result.Succeeded == false)
+        {
+          this.logger.Error(result.Message);
+        }
       }
       else
       {

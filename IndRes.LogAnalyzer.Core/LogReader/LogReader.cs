@@ -4,7 +4,7 @@ using System.Xml.Serialization;
 
 using IndRes.LogAnalyzer.Core.Models;
 
-namespace IndRes.LogAnalyzer.Core
+namespace IndRes.LogAnalyzer.Core.LogReader
 {
   public class LogReader : ILogReader
   {
@@ -15,14 +15,22 @@ namespace IndRes.LogAnalyzer.Core
       this.configuration = configuration;
     }
 
-    public List<Event> ReadLog()
+    public List<Event> ReadLogEvents()
     {
-      XmlRootAttribute xRoot = new XmlRootAttribute();
-      xRoot.ElementName = "log";
-      xRoot.IsNullable = true;
-      XmlSerializer xml = new XmlSerializer(typeof(Log), xRoot);
+      var reader = new StreamReader(this.configuration.LogLocation);
+      return this.Deserialize(reader).Events;
+    }
 
-      return ((Log)xml.Deserialize(new StreamReader(configuration.LogLocation))).Events;
+    public Log Deserialize(TextReader reader)
+    {
+      var xRoot = new XmlRootAttribute
+      {
+        ElementName = "log",
+        IsNullable = true
+      };
+      var xml = new XmlSerializer(typeof(Log), xRoot);
+
+      return (Log)xml.Deserialize(reader);
     }
   }
 }

@@ -1,16 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\NUnit.3.10.1\build\NUnit.props" Condition="Exists('..\packages\NUnit.3.10.1\build\NUnit.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A7CB615F-E63A-4684-BE73-EFB58BD08899}</ProjectGuid>
+    <ProjectGuid>{BA5A3EF5-F6FE-4599-93DF-3D958B45B5D9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>IndRes.LogAnalyzer.Commands</RootNamespace>
-    <AssemblyName>IndRes.LogAnalyzer.Commands</AssemblyName>
+    <RootNamespace>IndRes.LogAnalyzer.Tests</RootNamespace>
+    <AssemblyName>IndRes.LogAnalyzer.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -30,8 +33,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="StructureMap, Version=4.7.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\StructureMap.4.7.0\lib\net45\StructureMap.dll</HintPath>
+    <Reference Include="nunit.framework, Version=3.10.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.10.1\lib\net45\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -44,28 +47,42 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CommandProcessor.cs" />
-    <Compile Include="CommandFactory.cs" />
-    <Compile Include="Commands\AnalyzeLogEventsCommand.cs" />
-    <Compile Include="Commands\ApplicationExitCommand.cs" />
-    <Compile Include="Extensions\EnumExtensions.cs" />
-    <Compile Include="Commands\ICommand.cs" />
+    <Compile Include="LogValidationTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Commands\ReadLogCommand.cs" />
-    <Compile Include="ToolCommands.cs" />
+    <Compile Include="TestsBase.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\IndRes.LogAnalyzer.Core\IndRes.LogAnalyzer.Core.csproj">
       <Project>{f8910d71-3ced-4a6b-aafb-d15805ac9c6d}</Project>
       <Name>IndRes.LogAnalyzer.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\IndRes.LogAnalyzer.Validation\IndRes.LogAnalyzer.Validation.csproj">
-      <Project>{bee1302c-f5f7-491a-94a3-d4da166a9479}</Project>
-      <Name>IndRes.LogAnalyzer.Validation</Name>
+    <ProjectReference Include="..\IndRes.LogAnalyzer.Plugins\IndRes.LogAnalyzer.Plugins.csproj">
+      <Project>{9150CA07-4D19-4FC7-BF15-28A17B99C2A7}</Project>
+      <Name>IndRes.LogAnalyzer.Plugins</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <Content Include="Logs\multipleUserName.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Logs\usernameNumber.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Logs\singleUserName.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Logs\noviolations.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\NUnit.3.10.1\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit.3.10.1\build\NUnit.props'))" />
+  </Target>
 </Project>
