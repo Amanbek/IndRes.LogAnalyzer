@@ -1,5 +1,4 @@
 ﻿using System.Configuration;
-using System.Data.SqlClient;
 
 using IndRes.LogAnalyzer.Commands;
 using IndRes.LogAnalyzer.Core;
@@ -27,17 +26,11 @@ namespace IndRes.LogAnalyzer.BootStrapper
       container.Configure(
         x =>
           {
-            x.For<ILogConfiguration>().Use<LogConfiguration>().SetProperty(p => p.LogLocation = ConfigurationManager.AppSettings["LogLocation"]);
+            x.For<ILogReaderConfiguration>().Use<LogReaderConfiguration>().SetProperty(p => p.LogLocation = ConfigurationManager.AppSettings["LogLocation"]);
             x.For<ILogReader>().Use<LogReader>();
             x.For<CommandFactory>().Singleton();
             x.For<CommandProcessor>().Singleton();
-            x.For<ValidationProvider>().Use(v => new ValidationProvider(new ValidationConfiguration()
-            {
-              MultipleUsernameAttemptsPeriodLimit = int.Parse(ConfigurationManager.AppSettings["multiple-username-attempts-period"]),
-              SameUsernameAttemptsPeriodLimit = int.Parse(ConfigurationManager.AppSettings["same-username-attempts-period"]),
-              UserNameAttemptsLimit = int.Parse(ConfigurationManager.AppSettings["allowed-username-attempts"])
-            }));
-
+            x.For<ValidationProvider>().Use(v => new ValidationProvider(new ValidationConfiguration()));
           });
 
       return container;

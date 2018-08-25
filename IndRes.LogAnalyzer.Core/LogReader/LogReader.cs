@@ -8,9 +8,9 @@ namespace IndRes.LogAnalyzer.Core
 {
   public class LogReader : ILogReader
   {
-    private readonly ILogConfiguration configuration;
+    private readonly ILogReaderConfiguration configuration;
 
-    public LogReader(ILogConfiguration configuration)
+    public LogReader(ILogReaderConfiguration configuration)
     {
       this.configuration = configuration;
     }

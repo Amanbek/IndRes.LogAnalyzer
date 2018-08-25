@@ -31,9 +31,24 @@
     <help message="Unknown user name or incorrect password."/>
   </event>
 
+  <event seq="343048" time="2018-08-12 14:18:30.700003 +0000" app="BvSshServer 7.39" name="I_LOGON_AUTH_FAILED" desc="User authentication failed.">
+    <session id="2367" service="SSH" remoteAddress="49.195.67.114:34860"/>
+    <authentication attemptNr="1" userName="adrian-proxy" method="password" windowsAccount="EC2AMAZ-S80G73L\adrian-proxy"/>
+    <parameters failureReason="BadCredentials"/>
+    <help message="Unknown user name or incorrect password."/>
+  </event>
+
   <event seq="346339" time="2018-08-13 23:27:47.730613 +0000" app="BvSshServer 7.39" name="I_LOGON_AUTH_FAILED" desc="User authentication failed.">
     <session id="2380" service="SSH" remoteAddress="120.22.5.70:55352"/>
     <authentication attemptNr="1" userName="Robyn IR" method="password"/>
+    <parameters failureReason="WindowsAccountLookupError"/>
+    <error type="Exception" message="Account lookup failed: [Nt4] First LookupAccountName() for 'Robyn IR' failed with the following error: Windows error 1332: No mapping between account names and security IDs was done."/>
+    <help message="The supplied user name could not be looked up. Only the GSSAPI authentication method can possibly proceed with this username."/>
+  </event>
+
+  <event seq="346339" time="2018-08-13 23:28:47.730613 +0000" app="BvSshServer 7.39" name="I_LOGON_AUTH_FAILED" desc="User authentication failed.">
+    <session id="2380" service="SSH" remoteAddress="120.22.5.70:55352"/>
+    <authentication attemptNr="1" userName="Robyn" method="password"/>
     <parameters failureReason="WindowsAccountLookupError"/>
     <error type="Exception" message="Account lookup failed: [Nt4] First LookupAccountName() for 'Robyn IR' failed with the following error: Windows error 1332: No mapping between account names and security IDs was done."/>
     <help message="The supplied user name could not be looked up. Only the GSSAPI authentication method can possibly proceed with this username."/>

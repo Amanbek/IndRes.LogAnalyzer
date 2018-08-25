@@ -60,17 +60,9 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\IndRes.LogAnalyzer.Commands\IndRes.LogAnalyzer.Commands.csproj">
-      <Project>{a7cb615f-e63a-4684-be73-efb58bd08899}</Project>
-      <Name>IndRes.LogAnalyzer.Commands</Name>
-    </ProjectReference>
     <ProjectReference Include="..\IndRes.LogAnalyzer.Core\IndRes.LogAnalyzer.Core.csproj">
       <Project>{F8910D71-3CED-4A6B-AAFB-D15805AC9C6D}</Project>
       <Name>IndRes.LogAnalyzer.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\IndRes.LogAnalyzer.Validation\IndRes.LogAnalyzer.Validation.csproj">
-      <Project>{BEE1302C-F5F7-491A-94A3-D4DA166A9479}</Project>
-      <Name>IndRes.LogAnalyzer.Validation</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

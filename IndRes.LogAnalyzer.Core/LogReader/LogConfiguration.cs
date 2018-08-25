@@ -1,6 +1,6 @@
 ﻿namespace IndRes.LogAnalyzer.Core
 {
-  public class LogConfiguration : ILogConfiguration
+  public class LogReaderConfiguration : ILogReaderConfiguration
   {
     public string LogLocation { get; set; }
   }
