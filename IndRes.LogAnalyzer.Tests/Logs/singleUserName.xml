@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<log>
+  <event seq="343048" time="2018-08-12 14:17:30.700003 +0000" app="BvSshServer 7.39" name="I_LOGON_AUTH_FAILED" desc="User authentication failed.">
+    <session id="2367" service="SSH" remoteAddress="49.195.67.114:34860"/>
+    <authentication attemptNr="1" userName="adrian-proxy" method="password" windowsAccount="EC2AMAZ-S80G73L\adrian-proxy"/>
+    <parameters failureReason="BadCredentials"/>
+    <help message="Unknown user name or incorrect password."/>
+  </event>
+
+  <event seq="343048" time="2018-08-12 14:18:30.700003 +0000" app="BvSshServer 7.39" name="I_LOGON_AUTH_FAILED" desc="User authentication failed.">
+    <session id="2367" service="SSH" remoteAddress="49.195.67.114:34860"/>
+    <authentication attemptNr="1" userName="adrian-proxy" method="password" windowsAccount="EC2AMAZ-S80G73L\adrian-proxy"/>
+    <parameters failureReason="BadCredentials"/>
+    <help message="Unknown user name or incorrect password."/>
+  </event>
+</log>

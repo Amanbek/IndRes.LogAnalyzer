@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<log>
+  <event seq="346335" time="2018-08-13 23:26:38.532793 +0000" app="BvSshServer 7.39" name="I_CHANNEL_C2S_CLTSIDE_FORWARDING_STARTED" desc="Client-configured client-to-server port forwarding started.">
+    <session id="2379" service="SSH" remoteAddress="27.33.178.97:63143" windowsAccount="EC2AMAZ-S80G73L\benjohnson-proxy"/>
+    <channel type="direct-tcpip" originAddress="127.0.0.1:64667" requestAddress="safebrowsing.googleapis.com:443" targetAddress="safebrowsing.googleapis.com:443"/>
+  </event>
+  <event seq="346336" time="2018-08-13 23:27:17.346362 +0000" app="BvSshServer 7.39" name="I_CONNECT_ACCEPTED" desc="Connection accepted.">
+    <session id="2380" service="SSH" remoteAddress="120.22.5.70:55352"/>
+    <parameters addressRule="AnyIP" listenAddress="172.31.30.122:22345"/>
+  </event>
+
+  <event seq="346337" time="2018-08-13 23:27:17.352121 +0000" app="BvSshServer 7.39" name="I_CONNECT_VERSION_RECEIVED" desc="Client version string received.">
+    <session id="2380" service="SSH" remoteAddress="120.22.5.70:55352"/>
+    <parameters clientVersion="SSH-2.0-7.45 FlowSsh: Bitvise SSH Client (Tunnelier) 7.45 - BvSsh"/>
+  </event>
+
+  <event seq="346338" time="2018-08-13 23:27:47.589873 +0000" app="BvSshServer 7.39" name="I_SESSION_KEY_EXCHANGE_ALGORITHMS" desc="Key exchange algorithms.">
+    <session id="2380" service="SSH" remoteAddress="120.22.5.70:55352"/>
+    <parameters kexAlg="diffie-hellman-group15-sha512" cipherAlgIn="aes256-gcm" cipherAlgOut="aes256-gcm" macAlgIn="" macAlgOut="" comprAlgIn="none" comprAlgOut="none"/>
+  </event>
+</log>
